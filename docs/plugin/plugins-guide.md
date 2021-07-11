@@ -845,7 +845,7 @@ export function setupDevtools (app) {
   }, api => {
     api.on.visitComponentTree((payload, context) => {
       if (payload.componentInstance.type.meow) {
-        node.tags.push({
+        payload.treeNode.tags.push({
           label: 'meow',
           textColor: 0x000000,
           backgroundColor: 0xff984f
@@ -885,7 +885,7 @@ Example:
 api.on.visitComponentTree((payload, context) => {
   const node = payload.treeNode
   if (payload.componentInstance.type.meow) {
-    node.tags.push({
+    payload.treeNode.tags.push({
       label: 'meow',
       textColor: 0x000000,
       backgroundColor: 0xff984f
